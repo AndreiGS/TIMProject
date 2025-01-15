@@ -10,63 +10,56 @@ const AboutPage: React.FC = () => {
           We are a team of passionate developers dedicated to creating innovative
           solutions for urban mobility. Our fictional team members include:
         </p>
-        <ul className="list-disc list-inside mt-2">
-          <li>
-            <strong>John Doe</strong> - Lead Developer. With over 10 years of
-            experience in web development, John is the driving force behind our
-            technical vision.
-          </li>
-          <li>
-            <strong>Jane Smith</strong> - UI/UX Designer. Jane brings a creative
-            touch to our projects, ensuring a seamless and enjoyable user
-            experience.
-          </li>
-          <li>
-            <strong>Peter Jones</strong> - Data Scientist. Peter's expertise in
-            data analysis helps us make informed decisions and optimize our
-            services.
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h2 className="text-2xl font-bold mb-2">Contact Us</h2>
-        <form>
-          <div className="mb-4">
-            <label htmlFor="name" className="block mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              className="w-full p-2 border border-gray-300 rounded"
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="email" className="block mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              className="w-full p-2 border border-gray-300 rounded"
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="message" className="block mb-2">
-              Message
-            </label>
-            <textarea
-              id="message"
-              className="w-full p-2 border border-gray-300 rounded"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Send
-          </button>
-        </form>
+        <table className="min-w-full divide-y divide-gray-200 mt-4">
+          <thead className="bg-gray-50">
+            <tr>
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Name
+              </th>
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Role
+              </th>
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Description
+              </th>
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200">
+            <tr>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <div className="text-sm font-medium text-gray-900">John Doe</div>
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <div className="text-sm text-gray-500">Lead Developer</div>
+              </td>
+              <td className="px-6 py-4">
+                <div className="text-sm text-gray-500">With over 10 years of experience in web development, John is the driving force behind our technical vision.</div>
+              </td>
+            </tr>
+            <tr>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <div className="text-sm font-medium text-gray-900">Jane Smith</div>
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <div className="text-sm text-gray-500">UI/UX Designer</div>
+              </td>
+              <td className="px-6 py-4">
+                <div className="text-sm text-gray-500">Jane brings a creative touch to our projects, ensuring a seamless and enjoyable user experience.</div>
+              </td>
+            </tr>
+            <tr>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <div className="text-sm font-medium text-gray-900">Peter Jones</div>
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <div className="text-sm text-gray-500">Data Scientist</div>
+              </td>
+              <td className="px-6 py-4">
+                <div className="text-sm text-gray-500">Peter&#39;s expertise in data analysis helps us make informed decisions and optimize our services.</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );

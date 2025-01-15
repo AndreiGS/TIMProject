@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 interface Network {
   id: string;
@@ -13,9 +13,10 @@ interface Network {
 
 const MainAppPage: React.FC = () => {
   const [networks, setNetworks] = useState<Network[]>([]);
-  const [filter, setFilter] = useState('');
+  const [searchParams, setSearchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const city = searchParams.get('city') || '';
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,7 +39,7 @@ const MainAppPage: React.FC = () => {
   }, []);
 
   const filteredNetworks = networks.filter((network) =>
-    network.location.city.toLowerCase().includes(filter.toLowerCase())
+    network.location.city.toLowerCase().includes(city.toLowerCase())
   );
 
   return (
@@ -48,8 +49,11 @@ const MainAppPage: React.FC = () => {
         <input
           type="text"
           placeholder="Filter by city"
-          value={filter}
-          onChange={(e) => setFilter(e.target.value)}
+          value={city}
+          onChange={(e) => {
+            const newCity = e.target.value;
+            setSearchParams(newCity ? { city: newCity } : {});
+          }}
           className="w-full p-2 border border-gray-300 rounded"
         />
       </div>
