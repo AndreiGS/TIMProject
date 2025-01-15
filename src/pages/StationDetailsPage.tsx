@@ -63,14 +63,14 @@ const StationDetailsPage: React.FC = () => {
   const center = new LatLng(station.latitude, station.longitude);
 
   return (
-    <div className="container mx-auto p-4 flex">
-      <div className="w-1/2 p-4">
+    <div className="container mx-auto p-4 flex flex-col md:flex-row">
+      <div className="w-full md:w-1/2 order-2 md:order-1 p-4">
         <h1 className="text-2xl font-bold mb-2">{station.name}</h1>
         <p className="mb-1">Last Updated: {station.timestamp}</p>
         <p className="mb-1">Available Bikes: {station.free_bikes}</p>
         <p>Empty Slots: {station.empty_slots}</p>
       </div>
-      <div className="w-1/2">
+      <div className="w-full md:w-1/2 order-1 md:order-2">
         <MapContainer center={center} zoom={13} style={{ height: '400px' }}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
