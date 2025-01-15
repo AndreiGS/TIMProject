@@ -7,7 +7,8 @@ This project is a bike sharing app built with React, Vite, and Tailwind CSS. It 
 -   Landing page with a brief description of the app and a call to action.
 -   Main app page with a list of bike networks and a filter by city.
 -   Station details page with information about a specific station and a map showing its location.
--   About page with information about the developers and a contact form.
+-   About page with information about the developers.
+-   Contact page with a contact form.
 
 ## Running the Project Locally
 
